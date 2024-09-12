@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends './base.html' %}
+{% block content %}
+<h1>Hello Django</h1>
+<p>{{message}}</p>
+<p>
+  <a href='{% url "bbs:create" %}'>新規作成</a>
+</p>
+{% for article in articles %}
+<p>
+  {{article}}<br /><small>著者:{{ article.user_name }}</small>
+
+  <br />
+  <a href='{% url "bbs:detail" article.id %}'>詳細</a>
+  <a href='{% url "bbs:delete" article.id %}'>削除</a>
+</p>
+<hr />
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends './base.html' %}
+{% block content %}
+<h1>Hello Django</h1>
+<p>{{message}}</p>
+<p>{{article.content}}</p>
+<p><small>著者:{{ article.user_name }}</small></p>
+<p><a href='{%url "bbs:index"%}'>一覧に戻る</a></p>
+{% endblock %}
